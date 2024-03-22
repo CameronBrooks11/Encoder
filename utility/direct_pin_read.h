@@ -85,6 +85,13 @@
 #define PIN_TO_BITMASK(pin)             pin
 #define DIRECT_PIN_READ(base, pin)      digitalRead(pin)
 
+#elif defined(PORTENTA_H7_M7)
+#define IO_REG_TYPE                     uint32_t
+#define PIN_TO_BASEREG(pin)             (GPIO_TypeDef *)(pinDesc[pin].pPort)
+#define PIN_TO_BITMASK(pin)             digitalPinToPinName(pin)
+#define DIRECT_PIN_READ(base, mask)     (HAL_GPIO_ReadPin((GPIO_TypeDef *)base, mask) == GPIO_PIN_SET ? 1 : 0)
+
+
 #elif defined(__arc__) /* Arduino101/Genuino101 specifics */
 
 #include "scss_registers.h"

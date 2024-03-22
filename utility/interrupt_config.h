@@ -4,6 +4,7 @@
 #include <avr/interrupt.h>
 
 #define attachInterrupt(num, func, mode) enableInterrupt(num)
+
 #if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
 #define SCRAMBLE_INT_ORDER(num) ((num < 4) ? num + 2 : ((num < 6) ? num - 4 : num))
 #define DESCRAMBLE_INT_ORDER(num) ((num < 2) ? num + 4 : ((num < 6) ? num - 2 : num))
