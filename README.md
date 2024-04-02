@@ -1,6 +1,6 @@
 # Encoder Library
 
-This is a simplified version that doesn't use direct register addressing since the current set up for that is incompatible with the STM32H7 part of the Arduino Portenta.
+This is a simplified version that doesn't use direct register addressing since the current set up for that is incompatible with the STM32H7 part of the Arduino Portenta. Future efforts will focus on reincorporating it back into the main branch.
 
 Encoder counts pulses from quadrature encoded signals, which are commonly available from rotary knobs, motor or shaft sensors and other position sensors. 
 
